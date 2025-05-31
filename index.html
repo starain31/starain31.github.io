@@ -1,2 +1,256 @@
-<h1>Hi, I am citizen of cosmos. Currently lives in earth.<h1>
-<h2>!!! Site under construction !!!</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nazmus Sakib - Software Engineer Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Dark background */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #333; /* Darker scrollbar track */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #666; /* Darker scrollbar thumb */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #888;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="bg-gray-800 shadow-xl rounded-2xl p-8 max-w-4xl w-full mx-auto my-8 md:flex md:space-x-8">
+        <div class="md:w-1/3 flex flex-col items-center text-center md:text-left md:items-start mb-8 md:mb-0">
+            <img src="https://placehold.co/200x200/A78BFA/FFFFFF?text=Nazmus+Sakib" alt="Nazmus Sakib Profile Picture" class="w-48 h-48 rounded-full object-cover shadow-lg mb-6 border-4 border-purple-500">
+
+            <h1 class="text-4xl font-bold text-gray-100 mb-2">Nazmus Sakib</h1>
+            <p class="text-xl text-purple-400 font-medium mb-6">Software Engineer | Full-stack Developer</p>
+
+            <div class="mb-8">
+                <p id="original-bio" class="text-gray-300 leading-relaxed mb-4">
+                    Experienced Software Engineer with a passion for building scalable web applications and enhancing performance. Proven ability to lead teams, design microservices, and implement innovative solutions.
+                </p>
+                <button id="generate-bio-btn" class="bg-purple-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-purple-700 transition-colors duration-300 flex items-center justify-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.035 2.035M16 3l-2.035 2.035M16 21l2.035-2.035M18 19l-2.035-2.035M12 8v8m-4-4h8"></path>
+                    </svg>
+                    Generate New Bio ✨
+                </button>
+                <div id="generated-bio-container" class="mt-4 p-4 bg-purple-900 rounded-lg border border-purple-700 hidden">
+                    <p id="generated-bio" class="text-gray-100 leading-relaxed italic"></p>
+                    <div id="loading-indicator" class="hidden text-center text-purple-400 mt-2">Generating...</div>
+                </div>
+            </div>
+
+            <div class="flex space-x-6">
+                <a href="https://github.com/starain31" target="_blank" class="text-gray-400 hover:text-gray-100 transition-colors duration-300 transform hover:scale-110" aria-label="GitHub Profile">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.499.09.679-.217.679-.481 0-.237-.008-.865-.013-1.702-2.782.603-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.953 0-1.096.392-1.988 1.03-2.69-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.099 2.65.648.702 1.029 1.593 1.029 2.69 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2Z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/starain5/" target="_blank" class="text-gray-400 hover:text-gray-100 transition-colors duration-300 transform hover:scale-110" aria-label="LinkedIn Profile">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.381 1.11-2.5 2.48-2.5s2.48 1.119 2.48 2.5zM.02 24h4.96v-16h-4.96v16zM24 16c0 6.627-5.373 12-12 12s-12-5.373-12-12c0-6.627 5.373-12 12-12s12 5.373 12 12zM18 10c-1.657 0-3 1.343-3 3v9h-5v-9c0-2.762 2.238-5 5-5s5 2.238 5 5v9h-5v-9z"/>
+                    </svg>
+                </a>
+                <a href="https://stackoverflow.com/users/2278149/starain" target="_blank" class="text-gray-400 hover:text-gray-100 transition-colors duration-300 transform hover:scale-110" aria-label="Stack Overflow Profile">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.77 12.01l-1.32-.28c-.28-.06-.55.12-.61.4l-.53 2.5c-.06.28.12.55.4.61l1.32.28c.28.06.55-.12.61-.4l.53-2.5c.06-.28-.12-.55-.4-.61zm-4.42-3.11l-1.32-.28c-.28-.06-.55.12-.61.4l-.53 2.5c-.06.28.12.55.4.61l1.32.28c.28.06.55-.12.61-.4l.53-2.5c.06-.28-.12-.55-.4-.61zm-4.42-3.11l-1.32-.28c-.28-.06-.55.12-.61.4l-.53 2.5c-.06.28.12.55.4.61l1.32.28c.28.06.55-.12.61-.4l.53-2.5c.06-.28-.12-.55-.4-.61zm-4.42-3.11l-1.32-.28c-.28-.06-.55.12-.61.4l-.53 2.5c-.06.28.12.55.4.61l1.32.28c.28.06.55-.12.61-.4l.53-2.5c.06-.28-.12-.55-.4-.61zM22 18.5c0 1.93-1.57 3.5-3.5 3.5H5.5C3.57 22 2 20.43 2 18.5V5.5C2 3.57 3.57 2 5.5 2h13C20.43 2 22 3.57 22 5.5v13zM20 18.5V5.5c0-.82-.67-1.5-1.5-1.5H5.5c-.83 0-1.5.67-1.5 1.5v13c0 .82.67 1.5 1.5 1.5h13c.83 0 1.5-.67 1.5-1.5z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="md:w-2/3">
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-gray-100 mb-4 border-b-2 border-purple-500 pb-2">Technical Skills</h2>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">JavaScript</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">C/C++</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">SQL</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Python</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Clojure</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">HTML</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">MongoDB</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">MySQL</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Elasticsearch</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Redis</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Express.js</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Sails.JS</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Nest.JS</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Vue.js</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Node.js</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Docker</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Git</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">REST</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">JWT</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Intellij</span>
+                    <span class="bg-purple-700 text-purple-100 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Linux</span>
+                </div>
+            </section>
+
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-gray-100 mb-4 border-b-2 border-purple-500 pb-2">Work Experience</h2>
+                <div class="space-y-6">
+                    <div class="bg-gray-700 p-6 rounded-xl shadow-sm border border-gray-600">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Senior Software Engineer (Consultant)</h3>
+                        <p class="text-gray-200 font-medium mb-1">Technovative Solutions Ltd. | Nov 2024 - Present</p>
+                        <p class="text-gray-400 mb-3">Dhaka, Bangladesh (Remote)</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Contributing to building data privacy and enhancing AI research platform in healthcare using Federated learning.</li>
+                            <li>Current ongoing projects include TRUMPET and FLUTE.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-700 p-6 rounded-xl shadow-sm border border-gray-600">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Lead Software Engineer</h3>
+                        <p class="text-gray-200 font-medium mb-1">Share Trip | Jan 2023 - Dec 2024</p>
+                        <p class="text-gray-400 mb-3">Dhaka, Bangladesh</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Managed a team for Hotels and Accommodation Service.</li>
+                            <li>Designed and developed several micro-services which served all the accommodation service for an Online Travel platform.</li>
+                            <li>Led the Back-end for Hotels and Accommodation Service.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-700 p-6 rounded-xl shadow-sm border border-gray-600">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Software Engineer</h3>
+                        <p class="text-gray-200 font-medium mb-1">Green and Red Technologies | Dec 2020 - Dec 2021</p>
+                        <p class="text-gray-400 mb-3">Dhaka, Bangladesh</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Designed and developed a service to generate reports which gained 400% performance improvement over previous implementation by implementing Precomputation.</li>
+                            <li>Wrote Unit, E2E, and Load tests for an Online Ad Serving platform and found new insights to improve design.</li>
+                            <li>Implemented a notification service which is used throughout an Online Ad Serving platform.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-700 p-6 rounded-xl shadow-sm border border-gray-600">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Software Engineer</h3>
+                        <p class="text-gray-200 font-medium mb-1">Share Trip | Sep 2018 - Jun 2020</p>
+                        <p class="text-gray-400 mb-3">Dhaka, Bangladesh</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Designed and developed several micro-services which served all the accommodation service for an Online Travel platform.</li>
+                            <li>Developed a module which accomplished some core financial jobs for an Online Travel platform.</li>
+                            <li>Rewritten a service which used to serve Online Travel packages, gaining 500% performance improvement using Elastic-Search aggregation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-gray-100 mb-4 border-b-2 border-purple-500 pb-2">Education</h2>
+                <div class="bg-gray-700 p-6 rounded-xl shadow-sm border border-gray-600">
+                    <h3 class="text-xl font-semibold text-gray-100 mb-2">Bachelor of Science, Computer Science & Engineering</h3>
+                    <p class="text-gray-200 font-medium">United International University</p>
+                    <p class="text-gray-400">Dhaka, Bangladesh</p>
+                </div>
+            </section>
+
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-gray-100 mb-4 border-b-2 border-purple-500 pb-2">Voluntary Experience</h2>
+                <div class="bg-gray-700 p-6 rounded-xl shadow-sm border border-gray-600">
+                    <h3 class="text-xl font-semibold text-gray-100 mb-2">Section Leader</h3>
+                    <p class="text-gray-200 font-medium mb-1">Code in Place (Stanford University) | Apr 2021 - May 2021</p>
+                    <p class="text-gray-400 mb-3">Dhaka, Bangladesh</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Member of the teaching team for Code In Place, an online course offered by Stanford University during the COVID-19 pandemic.</li>
+                        <li>Prepared and taught a weekly discussion section of 8-10 students to supplement professors' lectures for a 6-week introduction to Python programming.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-gray-100 mb-4 border-b-2 border-purple-500 pb-2">Competitive Programming</h2>
+                <div class="bg-gray-700 p-6 rounded-xl shadow-sm border border-gray-600">
+                    <h3 class="text-xl font-semibold text-gray-100 mb-2">Onsite</h3>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1 mb-4">
+                        <li>Participated in ACM-ICPC 2012 and 2013 Asia Regional Dhaka Site Online Preliminary Contest.</li>
+                        <li>Participated in 10 National Collegiate Programming Contests.</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold text-gray-100 mb-2">Online</h3>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Codeforces, Max Rating: 1510</li>
+                        <li>UVa online-judge. Solved: 100+ problems.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold text-gray-100 mb-4 border-b-2 border-purple-500 pb-2">Contact</h2>
+                <div class="text-gray-300 space-y-3">
+                    <p><strong>Email:</strong> <a href="mailto:nsakib.cse@gmail.com" class="text-purple-400 hover:underline">nsakib.cse@gmail.com</a></p>
+                    <p><strong>Phone:</strong> +88 01747 224912</p>
+                    <p><strong>Location:</strong> Dhaka, Bangladesh (open to relocation)</p>
+                    <p>Feel free to connect with me for collaborations or opportunities!</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('generate-bio-btn').addEventListener('click', async () => {
+            const originalBioElement = document.getElementById('original-bio');
+            const generatedBioContainer = document.getElementById('generated-bio-container');
+            const generatedBioElement = document.getElementById('generated-bio');
+            const loadingIndicator = document.getElementById('loading-indicator');
+
+            const currentBio = originalBioElement.innerText.trim();
+
+            // Show loading indicator and generated bio container
+            generatedBioContainer.classList.remove('hidden');
+            loadingIndicator.classList.remove('hidden');
+            generatedBioElement.innerText = ''; // Clear previous content
+
+            try {
+                const prompt = `Rephrase and expand the following professional bio for a software engineer, making it more engaging and highlighting key strengths. Keep it concise, around 2-3 sentences:\n\n"${currentBio}"`;
+
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Canvas will automatically provide the API key at runtime
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(`API error: ${response.status} - ${errorData.error.message || response.statusText}`);
+                }
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    generatedBioElement.innerText = text;
+                } else {
+                    generatedBioElement.innerText = "Could not generate a new bio. Please try again.";
+                    console.error("Unexpected API response structure:", result);
+                }
+            } catch (error) {
+                console.error("Error generating bio:", error);
+                generatedBioElement.innerText = `Failed to generate bio: ${error.message}`;
+            } finally {
+                loadingIndicator.classList.add('hidden'); // Hide loading indicator
+            }
+        });
+    </script>
+</body>
+</html>
